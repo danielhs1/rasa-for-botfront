@@ -21,6 +21,10 @@ keywords = [ "nlp", "machine-learning", "machine-learning-library", "bot", "bots
 include = [ "LICENSE.txt", "README.md", "rasa/shared/core/training_data/visualization.html", "rasa/cli/default_config.yml", "rasa/shared/importers/*", "rasa/utils/schemas/*", "rasa/keys",]
 readme = "README.md"
 license = "Apache-2.0"
+packages = [
+    { include = "rasa" },
+    { include = "rasa_addons" },
+]
 
 [tool.towncrier]
 package = "rasa"
