@@ -1,4 +1,5 @@
 import rasa
+from uuid import uuid4
 import logging
 import inspect
 from rasa.core.channels.channel import (
@@ -43,7 +44,7 @@ class BotRegressionTestInput(RestInput):
         language: Text,
         on_new_message: Callable[[UserMessage], Awaitable[None]],
     ) -> List[Dict[Text, Any]]:
-        sender_id = "bot_regression_test_{:%Y-%m-%d_%H:%M:%S}".format(datetime.now())
+        sender_id = f"bot_regression_test_{str(uuid4())}"
         collector = BotRegressionTestOutput()
         for step in steps:
             if "user" in step:
